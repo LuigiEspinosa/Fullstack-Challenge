@@ -31,7 +31,7 @@ export class AuthService {
     }
 
     const { token } = (await reqresRes.json()) as ReqResLoginResponse;
-    const role = dto.email === 'eve.holt@reqres.in' ? 'admin' : 'user';
+    const role = dto.email === 'eve.holt@reqres.in' ? 'ADMIN' : 'USER';
     const opts = this.cookieOptions(process.env.NODE_ENV === 'production');
 
     res.cookie('session', token, opts);
