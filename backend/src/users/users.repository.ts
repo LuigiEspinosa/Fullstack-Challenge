@@ -1,14 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
 import { SavedUser } from '@prisma/client';
-
-interface UpsertUserInput {
-  id: number;
-  email: string;
-  first_name: string;
-  last_name: string;
-  avatar?: string;
-}
+import { UpsertUserInput } from './types/users.types';
 
 @Injectable()
 export class UsersRepository {
