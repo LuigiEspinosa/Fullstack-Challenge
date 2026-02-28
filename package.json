@@ -1,0 +1,9 @@
+{
+	"name": "fullstack-challenge",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev:backend": "cd backend && pnpm start:dev",
+		"dev:frontend": "cd frontend && pnpm dev"
+	}
+}
