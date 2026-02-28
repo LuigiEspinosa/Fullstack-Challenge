@@ -1,6 +1,7 @@
 import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { LoginDto } from './dto/login.dto';
 import { Response } from 'express';
+import type { LoginResponse, LogoutResponse } from './types/auth.types';
 
 type ReqResLoginResponse = { token: string };
 
@@ -15,7 +16,7 @@ export class AuthService {
     };
   }
 
-  async login(dto: LoginDto, res: Response) {
+  async login(dto: LoginDto, res: Response): Promise<LoginResponse> {
     const reqresRes = await fetch('https://reqres.in/api/login', {
       method: 'POST',
       headers: {
@@ -26,13 +27,11 @@ export class AuthService {
     });
 
     if (!reqresRes.ok) {
-      const body = await reqresRes.text();
-      console.error(`[AuthService]: ReqRes ${reqresRes.status}: ${body}`);
       throw new UnauthorizedException('Invalid credentials.');
     }
 
     const { token } = (await reqresRes.json()) as ReqResLoginResponse;
-    const role = dto.email === 'eve.holt@reqres.in' ? 'admin' : 'users';
+    const role = dto.email === 'eve.holt@reqres.in' ? 'admin' : 'user';
     const opts = this.cookieOptions(process.env.NODE_ENV === 'production');
 
     res.cookie('session', token, opts);
@@ -41,7 +40,7 @@ export class AuthService {
     return { data: { message: 'Login successful.', role } };
   }
 
-  logout(res: Response) {
+  logout(res: Response): LogoutResponse {
     const opts = this.cookieOptions(process.env.NODE_ENV === 'production');
     res.clearCookie('session', opts);
     res.clearCookie('role', opts);
