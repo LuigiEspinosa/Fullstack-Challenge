@@ -26,19 +26,17 @@ model SavedUser {
   avatar     String?
   role       Role     @default(USER)
   saved_at   DateTime @default(now())
-  posts      Post[]
 
   @@map("saved_users")
 }
 
 model Post {
-  id             String     @id @default(cuid())
+  id             String   @id @default(cuid())
   title          String
   content        String
   author_user_id Int
-  author         SavedUser? @relation(fields: [author_user_id], references: [id])
-  created_at     DateTime   @default(now())
-  updated_at     DateTime   @updatedAt
+  created_at     DateTime @default(now())
+  updated_at     DateTime @updatedAt
 
   @@map("posts")
 }
