@@ -6,8 +6,12 @@ import {
   Param,
   ParseIntPipe,
   Post,
+  UseGuards,
 } from '@nestjs/common';
 import { UsersService } from './users.service';
+import { RolesGuard } from '../../src/common/guards/roles.guard';
+import { Roles } from '../../src/common/decorators/roles.decorator';
+import { Role } from '@prisma/client';
 
 @Controller('users')
 export class UsersController {
@@ -33,6 +37,8 @@ export class UsersController {
 
   @Delete('saved/:id')
   @HttpCode(200)
+  @UseGuards(RolesGuard)
+  @Roles(Role.ADMIN)
   async deleteSaved(@Param('id', ParseIntPipe) id: number) {
     const user = await this.usersService.deleteSaved(id);
     return { data: user };
