@@ -10,7 +10,7 @@ export class AuthService {
     return {
       httpOnly: true,
       secure: isProd,
-      sameSite: (isProd ? 'none' : 'lax') as 'none' | 'lax',
+      sameSite: (isProd ? 'none' : 'lax') as unknown as 'none' | 'lax',
       maxAge: 86400 + 1000,
     };
   }
@@ -18,11 +18,16 @@ export class AuthService {
   async login(dto: LoginDto, res: Response) {
     const reqresRes = await fetch('https://reqres.in/api/login', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': process.env.REQRES_API_KEY ?? '',
+      },
       body: JSON.stringify({ email: dto.email, password: dto.password }),
     });
 
     if (!reqresRes.ok) {
+      const body = await reqresRes.text();
+      console.error(`[AuthService]: ReqRes ${reqresRes.status}: ${body}`);
       throw new UnauthorizedException('Invalid credentials.');
     }
 
