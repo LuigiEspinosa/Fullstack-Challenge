@@ -48,11 +48,11 @@ export async function getReqResUsers(page = 1): Promise<ReqResUsersResponse> {
 }
 
 export async function getReqResUser(id: number): Promise<{ data: ReqResUser }> {
-	return reqresFetch<{ data: ReqResUser }>(`/user/${id}`);
+	return reqresFetch<{ data: ReqResUser }>(`/users/${id}`);
 }
 
 export async function importUser(id: number): Promise<{ data: SavedUser }> {
-	return apiFetch<{ data: SavedUser }>(`/user/import/${id}`, {
+	return apiFetch<{ data: SavedUser }>(`/users/import/${id}`, {
 		method: "POST",
 	});
 }
