@@ -5,6 +5,6 @@
 	"scripts": {
 		"dev:backend": "cd backend && pnpm start:dev",
 		"dev:frontend": "cd frontend && pnpm dev",
-		"test:backend": "cd backend && pnpm test:e2e"
+		"test:backend": "cd backend && pnpm test:e2e --detectOpenHandles"
 	}
 }

@@ -17,19 +17,20 @@ import { UpdatePostDto } from './dto/update-post.dto';
 import { RolesGuard } from '../common/guards/roles.guard';
 import { Roles } from '../common/decorators/roles.decorator';
 import { Role } from '@prisma/client';
+import type { PostsReponse, GetPostsReponse } from './types/posts.types';
 
 @Controller('posts')
 export class PostsController {
   constructor(private readonly postsService: PostsService) {}
 
   @Post()
-  async create(@Body() dto: CreatePostDto) {
+  async create(@Body() dto: CreatePostDto): Promise<PostsReponse> {
     const post = await this.postsService.create(dto);
     return { data: post };
   }
 
   @Get()
-  async findAll(@Query() dto: GetPostsDto) {
+  async findAll(@Query() dto: GetPostsDto): Promise<GetPostsReponse> {
     const { posts, total, page, limit } = await this.postsService.findAll(dto);
     return {
       data: posts,
@@ -43,13 +44,16 @@ export class PostsController {
   }
 
   @Get(':id')
-  async findOne(@Param('id') id: string) {
+  async findOne(@Param('id') id: string): Promise<PostsReponse> {
     const post = await this.postsService.findOne(id);
     return { data: post };
   }
 
   @Put(':id')
-  async update(@Param('id') id: string, @Body() dto: UpdatePostDto) {
+  async update(
+    @Param('id') id: string,
+    @Body() dto: UpdatePostDto,
+  ): Promise<PostsReponse> {
     const post = await this.postsService.update(id, dto);
     return { data: post };
   }
@@ -58,7 +62,7 @@ export class PostsController {
   @HttpCode(200)
   @UseGuards(RolesGuard)
   @Roles(Role.ADMIN)
-  async remove(@Param('id') id: string) {
+  async remove(@Param('id') id: string): Promise<PostsReponse> {
     const post = await this.postsService.remove(id);
     return { data: post };
   }
