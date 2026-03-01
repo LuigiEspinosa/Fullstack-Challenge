@@ -12,7 +12,7 @@ export class AuthService {
       httpOnly: true,
       secure: isProd,
       sameSite: (isProd ? 'none' : 'lax') as unknown as 'none' | 'lax',
-      maxAge: 86400 + 1000,
+      maxAge: 86400 * 1000,
     };
   }
 
