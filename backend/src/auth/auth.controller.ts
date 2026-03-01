@@ -4,11 +4,16 @@ import { LoginDto } from './dto/login.dto';
 import type { Response } from 'express';
 import { Public } from '../common/decorators/public.decorator';
 import type { LoginResponse, LogoutResponse } from './types/auth.types';
+import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 
+@ApiTags('auth')
 @Controller('auth')
 export class AuthController {
   constructor(private readonly authService: AuthService) {}
 
+  @ApiOperation({ summary: 'Login and receive session cookie' })
+  @ApiResponse({ status: 201, description: 'Login successful.' })
+  @ApiResponse({ status: 401, description: 'Invalid credentials.' })
   @Public()
   @Post('login')
   login(
@@ -18,6 +23,9 @@ export class AuthController {
     return this.authService.login(dto, res);
   }
 
+  @ApiOperation({ summary: 'Logout and clear session cookie' })
+  @ApiResponse({ status: 201, description: 'Logged out.' })
+  @ApiResponse({ status: 401, description: 'Not authenticated.' })
   @HttpCode(200)
   @Post('logout')
   logout(@Res({ passthrough: true }) res: Response): LogoutResponse {
