@@ -1,10 +1,13 @@
 {
 	"name": "fullstack-challenge",
-	"version": "0.1.6",
+	"version": "0.2.7",
 	"private": true,
 	"scripts": {
+		"dev": "pnpm -r --parallel dev",
 		"dev:backend": "cd backend && pnpm start:dev",
 		"dev:frontend": "cd frontend && pnpm dev",
-		"test:backend": "cd backend && pnpm test:e2e --detectOpenHandles"
+		"test:all": "pnpm -r test",
+		"test:backend": "cd backend && pnpm test:e2e --detectOpenHandles",
+		"test:frontend": "cd frontend && pnpm test"
 	}
 }
