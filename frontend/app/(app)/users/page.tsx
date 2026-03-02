@@ -4,6 +4,8 @@ import { useMemo, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import Link from "next/link";
 import Image from "next/image";
+import gsap from "gsap";
+import { useGsapContext } from "@/hooks/use-gsap-context";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { SavedBadge } from "@/components/saved-badge";
@@ -23,6 +25,15 @@ export default function UsersPage() {
     queryFn: getSavedUsers,
   });
 
+  const containerRef = useGsapContext<HTMLDivElement>(() => {
+    gsap.from('.user-card', {
+      opacity: 0,
+      y: 20,
+      stagger: 0.08,
+      ease: 'power2.out'
+    });
+  })
+
   const savedIds = useMemo(
     () => new Set((savedData?.data ?? []).map((u) => u.id)),
     [savedData]
@@ -39,7 +50,7 @@ export default function UsersPage() {
   }, [usersData, search]);
 
   return (
-    <div className="space-y-6">
+    <div ref={containerRef} className="space-y-6">
       <div className="flex items-center gap-4">
         <h1 className="flex-1 text-2xl font-bold">Users</h1>
         <Input
@@ -61,7 +72,7 @@ export default function UsersPage() {
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {filteredUsers.map((user) => (
           <Link key={user.id} href={`/users/${user.id}`}>
-            <div className="cursor-pointer ronuded-lg border bg-white p-4 transform-colors hover:bg-zinc-50">
+            <div className="user-card cursor-pointer rounded-lg border bg-white p-4 transition-colors hover:bg-zinc-50">
               <div className="flex items-center gap-3">
                 <Image
                   src={user.avatar}
