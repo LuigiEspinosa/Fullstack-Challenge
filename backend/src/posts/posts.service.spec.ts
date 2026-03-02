@@ -52,9 +52,16 @@ describe('PostsService', () => {
   });
 
   describe('findOne()', () => {
-    it('throws NotFoundException when post does not exist', async () => {
+    it('returns posts when it exists', async () => {
       mockRepo.findById.mockResolvedValue(mockPost);
       await expect(service.findOne('post-1')).resolves.toEqual(mockPost);
+    });
+
+    it('throws NotFoundException when post does not exist', async () => {
+      mockRepo.findById.mockResolvedValue(null);
+      await expect(service.findOne('missing')).rejects.toThrow(
+        NotFoundException,
+      );
     });
   });
 });
