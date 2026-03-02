@@ -10,6 +10,8 @@ import type {
   UpsertUserResponse,
 } from '../src/users/types/users.types';
 
+const NON_ADMIN_COOKE = 'session=faketoken; role=USER';
+
 describe('Users (e2e)', () => {
   let app: INestApplication<App>;
   let adminCookie: string;
@@ -107,6 +109,28 @@ describe('Users (e2e)', () => {
         .get('/users/saved/9999')
         .set('Cookie', adminCookie)
         .expect(404);
+    });
+  });
+
+  describe('DELETE /users/saved/:id', () => {
+    beforeEach(async () => {
+      await request(app.getHttpServer())
+        .post('/users/imports/1')
+        .set('Cookie', adminCookie);
+    });
+
+    it('returns 403 for non-admin users', () => {
+      return request(app.getHttpServer())
+        .delete('/users/saved/1')
+        .set('Cookie', NON_ADMIN_COOKE)
+        .expect(403);
+    });
+
+    it('allows admin to delete a saved user', () => {
+      return request(app.getHttpServer())
+        .delete('/users/saved/1')
+        .set('Cookie', adminCookie)
+        .expect(200);
     });
   });
 });

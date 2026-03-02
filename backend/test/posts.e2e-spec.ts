@@ -146,6 +146,25 @@ describe('Posts (e2e)', () => {
     });
   });
 
+  describe('GET /posts/:id', () => {
+    it('returns a single post by id', async () => {
+      const res = await request(app.getHttpServer())
+        .get(`/posts/${createdPostId}`)
+        .set('Cookie', adminCookie)
+        .expect(200);
+
+      const body = res.body as PostsReponse;
+      expect(body.data.id).toBe(createdPostId);
+    });
+
+    it('returns 404 for a non-existent post', () => {
+      return request(app.getHttpServer())
+        .get('/posts/non-existent-id')
+        .set('Cookie', adminCookie)
+        .expect(404);
+    });
+  });
+
   describe('PUT /posts/:id', () => {
     it('updates a post field', async () => {
       const res = await request(app.getHttpServer())
@@ -158,9 +177,17 @@ describe('Posts (e2e)', () => {
       expect(body.data.title).toBe('Updated title');
     });
 
+    it('returns 400 when content is too short', () => {
+      return request(app.getHttpServer())
+        .put(`/posts/${createdPostId}`)
+        .set('Cookie', adminCookie)
+        .send({ content: 'short' })
+        .expect(400);
+    });
+
     it('returns 404 when updating a non-existen post', () => {
       return request(app.getHttpServer())
-        .put('/post/non-existet-id')
+        .put('/post/non-existent-id')
         .set('Cookie', adminCookie)
         .send({ title: 'Updated title' })
         .expect(404);
