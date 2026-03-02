@@ -35,14 +35,17 @@ describe('Users (e2e)', () => {
 
     prisma = app.get(PrismaService);
 
-    const loginRes = await request(app.getHttpServer())
+    const res = await request(app.getHttpServer())
       .post('/auth/login')
       .send({ email: 'eve.holt@reqres.in', password: 'pistol' })
       .expect(201);
 
-    const cookies = loginRes.headers['set-cookie'] as unknown as string[];
-    adminCookie =
+    const cookies = res.headers['set-cookie'] as unknown as string[];
+    const session =
       cookies.find((c) => c.startsWith('session='))?.split(';')[0] ?? '';
+    const role =
+      cookies.find((c) => c.startsWith('role='))?.split(';')[0] ?? '';
+    adminCookie = `${session}; ${role}`;
   });
 
   afterAll(async () => {
@@ -115,7 +118,7 @@ describe('Users (e2e)', () => {
   describe('DELETE /users/saved/:id', () => {
     beforeEach(async () => {
       await request(app.getHttpServer())
-        .post('/users/imports/1')
+        .post('/users/import/1')
         .set('Cookie', adminCookie);
     });
 
