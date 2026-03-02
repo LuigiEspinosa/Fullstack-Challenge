@@ -140,11 +140,14 @@ export default function PostsPage() {
                       This action cannot be undone. Admin role is required.
                     </AlertDialogDescription>
                   </AlertDialogHeader>
-                  <AlertDialogFooter
-                    className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
-                    onClick={() => remove(post.id)}
-                  >
-                    Delete
+                  <AlertDialogFooter>
+                    <AlertDialogCancel>Cancel</AlertDialogCancel>
+                    <AlertDialogAction
+                      className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
+                      onClick={() => remove(post.id)}
+                    >
+                      Delete
+                    </AlertDialogAction>
                   </AlertDialogFooter>
                 </AlertDialogContent>
               </AlertDialog>
