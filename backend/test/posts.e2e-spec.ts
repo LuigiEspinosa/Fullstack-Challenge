@@ -52,6 +52,7 @@ describe('Posts (e2e)', () => {
 
   afterAll(async () => {
     await prisma.post.deleteMany();
+    await prisma.$disconnect();
     await app.close();
   });
 

@@ -50,6 +50,7 @@ describe('Users (e2e)', () => {
 
   afterAll(async () => {
     await prisma.savedUser.deleteMany();
+    await prisma.$disconnect();
     await app.close();
   });
 
