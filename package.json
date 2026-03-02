@@ -1,13 +1,16 @@
 {
 	"name": "fullstack-challenge",
-	"version": "0.2.8",
+	"version": "0.2.10",
 	"private": true,
 	"scripts": {
 		"dev": "pnpm -r --parallel dev",
-		"dev:backend": "cd backend && pnpm start:dev",
-		"dev:frontend": "cd frontend && pnpm dev",
-		"test:all": "pnpm -r test",
-		"test:backend": "cd backend && pnpm test:e2e --detectOpenHandles",
-		"test:frontend": "cd frontend && pnpm test"
+		"dev:backend": "pnpm --filter backend start:dev",
+		"dev:frontend": "pnpm --filter frontend dev",
+
+		"test": "pnpm -r --if-present test",
+		"test:backend": "pnpm --filter backend test",
+		"test:frontend": "pnpm --filter frontend test",
+		"test:e2e": "pnpm --filter backend test:e2e",
+		"test:all": "pnpm test && pnpm test:e2e"
 	}
 }
