@@ -11,6 +11,7 @@ provider:
     NODE_ENV: production
     DATABASE_URL: ${env:DATABASE_URL, 'postgresql://challenge:challenge@localhost:5432/challenge'}
     FRONTEND_URL: ${env:FRONTEND_URL, 'http://localhost:3000'}
+    REQRES_API_KEY: ${env:REQRES_API_KEY, ''}
 
 functions:
   api:
