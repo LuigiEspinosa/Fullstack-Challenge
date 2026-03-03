@@ -1,6 +1,6 @@
 {
   "name": "fullstack-challenge",
-  "version": "0.2.11",
+  "version": "1.2.11",
   "private": true,
   "scripts": {
     "dev": "pnpm -r --parallel dev",
