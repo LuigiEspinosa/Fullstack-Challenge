@@ -76,7 +76,7 @@ export class UsersController {
     description: 'Page number (1 or 2)',
   })
   @ApiResponse({ status: 200, description: 'Paginated ReqRes user list.' })
-  @Get('regres')
+  @Get('reqres')
   getReqResUsers(@Query('page') page = '1') {
     return this.usersService.getReqResUsers(Number(page));
   }
@@ -90,7 +90,7 @@ export class UsersController {
   })
   @ApiResponse({ status: 200, description: 'ReqRes user object.' })
   @ApiResponse({ status: 404, description: 'User not found on ReqRes.' })
-  @Get('regres/:id')
+  @Get('reqres/:id')
   getReqResUser(@Param('id') id: string) {
     return this.usersService.getReqResUser(Number(id));
   }
