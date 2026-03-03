@@ -6,8 +6,11 @@ onlyBuiltDependencies:
   - '@nestjs/core'
   - '@prisma/engines'
   - '@scarf/scarf'
+  - aws-sdk
+  - es5-ext
   - esbuild
   - msw
   - prisma
+  - serverless
   - sharp
   - unrs-resolver

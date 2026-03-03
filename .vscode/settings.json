@@ -1,6 +1,6 @@
 {
   "jest.rootPath": "backend",
-  "jest.jestCommandLine": "pnpm test --",
+  "jest.jestCommandLine": "pnpm --filter backend test --",
   "jest.runMode": "on-save",
   "vitest.rootConfig": "frontend/vitest.config.ts",
   "editor.formatOnSave": true,
