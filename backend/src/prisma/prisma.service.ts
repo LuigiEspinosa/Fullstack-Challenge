@@ -10,6 +10,7 @@ export class PrismaService extends PrismaClient implements OnModuleInit {
     const pool = new Pool({
       connectionString: config.get<string>('DATABASE_URL'),
       max: 1,
+      ssl: { rejectUnauthorized: false },
     });
     super({ adapter: new PrismaPg(pool) });
   }
