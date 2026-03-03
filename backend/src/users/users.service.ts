@@ -5,14 +5,7 @@ import {
 } from '@nestjs/common';
 import { UsersRepository } from './users.repository';
 import { SavedUser } from '@prisma/client';
-
-type ReqResUser = {
-  id: number;
-  email: string;
-  first_name: string;
-  last_name: string;
-  avatar: string;
-};
+import type { ReqResUser, ReqResUsersResponse } from './types/users.types';
 
 @Injectable()
 export class UsersService {
@@ -52,5 +45,21 @@ export class UsersService {
     const user = await this.usersRepository.findById(id);
     if (!user) throw new NotFoundException(`Saved user ${id} not found.`);
     return this.usersRepository.delete(id);
+  }
+
+  async getReqResUsers(page: number) {
+    const res = await fetch(`https://reqres.in/api/users?page=${page}`, {
+      headers: { 'x-api-key': process.env.REQRES_API_KEY ?? '' },
+    });
+    if (!res.ok) throw new NotFoundException('Could not reach ReqRes.');
+    return res.json() as Promise<ReqResUsersResponse>;
+  }
+
+  async getReqResUser(id: number) {
+    const res = await fetch(`https://reqres.in/api/users/${id}`, {
+      headers: { 'x-api-key': process.env.REQRES_API_KEY ?? '' },
+    });
+    if (!res.ok) throw new NotFoundException(`User ${id} not found on ReqRes.`);
+    return res.json() as Promise<ReqResUser>;
   }
 }
