@@ -1,0 +1,670 @@
+{
+  "log": {
+    "version": "1.2",
+    "creator": {
+      "name": "Firefox",
+      "version": "149.0"
+    },
+    "browser": {
+      "name": "Firefox",
+      "version": "149.0"
+    },
+    "pages": [
+      {
+        "id": "page_1",
+        "pageTimings": {
+          "onContentLoad": 382,
+          "onLoad": 523
+        },
+        "startedDateTime": "2026-03-02T22:17:12.813-05:00",
+        "title": "https://fullstack-challenge-tawny.vercel.app/login"
+      }
+    ],
+    "entries": [
+      {
+        "startedDateTime": "2026-03-02T22:17:12.813-05:00",
+        "request": {
+          "bodySize": 50,
+          "method": "POST",
+          "url": "https://aaw7q5dw4f.execute-api.us-east-2.amazonaws.com/auth/login",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "Host",
+              "value": "aaw7q5dw4f.execute-api.us-east-2.amazonaws.com"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0"
+            },
+            {
+              "name": "Accept",
+              "value": "*/*"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "en-US,en;q=0.9"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate, br, zstd"
+            },
+            {
+              "name": "Referer",
+              "value": "https://fullstack-challenge-tawny.vercel.app/"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Content-Length",
+              "value": "50"
+            },
+            {
+              "name": "Origin",
+              "value": "https://fullstack-challenge-tawny.vercel.app"
+            },
+            {
+              "name": "Sec-Fetch-Storage-Access",
+              "value": "none"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "Cookie",
+              "value": "session=QpwL5tke4Pnpja7X4; role=ADMIN"
+            },
+            {
+              "name": "Sec-Fetch-Dest",
+              "value": "empty"
+            },
+            {
+              "name": "Sec-Fetch-Mode",
+              "value": "cors"
+            },
+            {
+              "name": "Sec-Fetch-Site",
+              "value": "cross-site"
+            }
+          ],
+          "cookies": [
+            {
+              "name": "session",
+              "value": "QpwL5tke4Pnpja7X4"
+            },
+            {
+              "name": "role",
+              "value": "ADMIN"
+            }
+          ],
+          "queryString": [],
+          "headersSize": 0,
+          "postData": {
+            "mimeType": "application/json",
+            "params": [],
+            "text": "{\"email\":\"eve.holt@reqres.in\",\"password\":\"pistol\"}"
+          }
+        },
+        "response": {
+          "status": 201,
+          "statusText": "",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "date",
+              "value": "Tue, 03 Mar 2026 03:17:13 GMT"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "name": "content-length",
+              "value": "55"
+            },
+            {
+              "name": "access-control-allow-origin",
+              "value": "https://fullstack-challenge-tawny.vercel.app"
+            },
+            {
+              "name": "x-ratelimit-limit",
+              "value": "100"
+            },
+            {
+              "name": "x-ratelimit-remaining",
+              "value": "97"
+            },
+            {
+              "name": "x-ratelimit-reset",
+              "value": "5"
+            },
+            {
+              "name": "etag",
+              "value": "W/\"37-rFjzYRd6gFpGH8VmzaY7CkpLJd4\""
+            },
+            {
+              "name": "x-powered-by",
+              "value": "Express"
+            },
+            {
+              "name": "vary",
+              "value": "Origin"
+            },
+            {
+              "name": "access-control-allow-credentials",
+              "value": "true"
+            },
+            {
+              "name": "set-cookie",
+              "value": "session=QpwL5tke4Pnpja7X4; Max-Age=86400; Path=/; Expires=Wed, 04 Mar 2026 03:17:13 GMT; HttpOnly; Secure; SameSite=None"
+            },
+            {
+              "name": "set-cookie",
+              "value": "role=ADMIN; Max-Age=86400; Path=/; Expires=Wed, 04 Mar 2026 03:17:13 GMT; HttpOnly; Secure; SameSite=None"
+            },
+            {
+              "name": "apigw-requestid",
+              "value": "ZoHdCgDACYcEM5A="
+            },
+            {
+              "name": "X-Firefox-Spdy",
+              "value": "h2"
+            }
+          ],
+          "cookies": [
+            {
+              "name": "session",
+              "value": "QpwL5tke4Pnpja7X4"
+            },
+            {
+              "name": "role",
+              "value": "ADMIN"
+            }
+          ],
+          "content": {
+            "mimeType": "application/json; charset=utf-8",
+            "size": 55,
+            "text": "{\"data\":{\"message\":\"Login successful.\",\"role\":\"ADMIN\"}}"
+          },
+          "redirectURL": "",
+          "headersSize": 681,
+          "bodySize": 736
+        },
+        "cache": {},
+        "timings": {
+          "blocked": 0,
+          "dns": 0,
+          "connect": 0,
+          "ssl": 0,
+          "send": 0,
+          "wait": 348,
+          "receive": 0
+        },
+        "time": 348,
+        "_securityState": "secure",
+        "serverIPAddress": "3.151.171.253",
+        "connection": "443",
+        "pageref": "page_1"
+      },
+      {
+        "startedDateTime": "2026-03-02T22:17:12.816-05:00",
+        "request": {
+          "bodySize": 0,
+          "method": "OPTIONS",
+          "url": "https://aaw7q5dw4f.execute-api.us-east-2.amazonaws.com/auth/login",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "Host",
+              "value": "aaw7q5dw4f.execute-api.us-east-2.amazonaws.com"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0"
+            },
+            {
+              "name": "Accept",
+              "value": "*/*"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "en-US,en;q=0.9"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate, br, zstd"
+            },
+            {
+              "name": "Access-Control-Request-Method",
+              "value": "POST"
+            },
+            {
+              "name": "Access-Control-Request-Headers",
+              "value": "content-type"
+            },
+            {
+              "name": "Referer",
+              "value": "https://fullstack-challenge-tawny.vercel.app/"
+            },
+            {
+              "name": "Origin",
+              "value": "https://fullstack-challenge-tawny.vercel.app"
+            },
+            {
+              "name": "Sec-Fetch-Storage-Access",
+              "value": "none"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "Sec-Fetch-Dest",
+              "value": "empty"
+            },
+            {
+              "name": "Sec-Fetch-Mode",
+              "value": "cors"
+            },
+            {
+              "name": "Sec-Fetch-Site",
+              "value": "cross-site"
+            },
+            {
+              "name": "Priority",
+              "value": "u=4"
+            }
+          ],
+          "cookies": [],
+          "queryString": [],
+          "headersSize": 605
+        },
+        "response": {
+          "status": 204,
+          "statusText": "",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "date",
+              "value": "Tue, 03 Mar 2026 03:17:13 GMT"
+            },
+            {
+              "name": "access-control-allow-origin",
+              "value": "https://fullstack-challenge-tawny.vercel.app"
+            },
+            {
+              "name": "vary",
+              "value": "Origin, Access-Control-Request-Headers"
+            },
+            {
+              "name": "access-control-allow-credentials",
+              "value": "true"
+            },
+            {
+              "name": "access-control-allow-methods",
+              "value": "GET,HEAD,PUT,PATCH,POST,DELETE"
+            },
+            {
+              "name": "access-control-allow-headers",
+              "value": "content-type"
+            },
+            {
+              "name": "x-powered-by",
+              "value": "Express"
+            },
+            {
+              "name": "apigw-requestid",
+              "value": "ZoHdBjQMiYcEP1Q="
+            },
+            {
+              "name": "X-Firefox-Spdy",
+              "value": "h2"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "mimeType": "text/plain",
+            "size": 0,
+            "text": ""
+          },
+          "redirectURL": "",
+          "headersSize": 397,
+          "bodySize": 397
+        },
+        "cache": {},
+        "timings": {
+          "blocked": 0,
+          "dns": 0,
+          "connect": 0,
+          "ssl": 0,
+          "send": 0,
+          "wait": 111,
+          "receive": 0
+        },
+        "time": 111,
+        "_securityState": "secure",
+        "serverIPAddress": "18.218.88.196",
+        "connection": "443",
+        "pageref": "page_1"
+      },
+      {
+        "startedDateTime": "2026-03-02T22:17:13.282-05:00",
+        "request": {
+          "bodySize": 0,
+          "method": "GET",
+          "url": "https://fullstack-challenge-tawny.vercel.app/dashboard?_rsc=970e3",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "Host",
+              "value": "fullstack-challenge-tawny.vercel.app"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0"
+            },
+            {
+              "name": "Accept",
+              "value": "*/*"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "en-US,en;q=0.9"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate, br, zstd"
+            },
+            {
+              "name": "Referer",
+              "value": "https://fullstack-challenge-tawny.vercel.app/login"
+            },
+            {
+              "name": "rsc",
+              "value": "1"
+            },
+            {
+              "name": "next-router-state-tree",
+              "value": "%5B%22%22%2C%7B%22children%22%3A%5B%22(auth)%22%2C%7B%22children%22%3A%5B%22login%22%2C%7B%22children%22%3A%5B%22__PAGE__%22%2C%7B%7D%2Cnull%2Cnull%5D%7D%2Cnull%2Cnull%5D%7D%2Cnull%2Cnull%5D%7D%2Cnull%2Cnull%2Ctrue%5D"
+            },
+            {
+              "name": "next-url",
+              "value": "/login"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "Sec-Fetch-Dest",
+              "value": "empty"
+            },
+            {
+              "name": "Sec-Fetch-Mode",
+              "value": "cors"
+            },
+            {
+              "name": "Sec-Fetch-Site",
+              "value": "same-origin"
+            },
+            {
+              "name": "Priority",
+              "value": "u=4"
+            }
+          ],
+          "cookies": [],
+          "queryString": [
+            {
+              "name": "_rsc",
+              "value": "970e3"
+            }
+          ],
+          "headersSize": 707
+        },
+        "response": {
+          "status": 307,
+          "statusText": "",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "cache-control",
+              "value": "public, max-age=0, must-revalidate"
+            },
+            {
+              "name": "content-type",
+              "value": "text/plain"
+            },
+            {
+              "name": "date",
+              "value": "Tue, 03 Mar 2026 03:17:13 GMT"
+            },
+            {
+              "name": "location",
+              "value": "/login"
+            },
+            {
+              "name": "server",
+              "value": "Vercel"
+            },
+            {
+              "name": "strict-transport-security",
+              "value": "max-age=63072000; includeSubDomains; preload"
+            },
+            {
+              "name": "x-vercel-id",
+              "value": "iad1::c9ls4-1772507833829-5670af017915"
+            },
+            {
+              "name": "X-Firefox-Spdy",
+              "value": "h2"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "mimeType": "text/x-component",
+            "size": 0,
+            "comment": "Response bodies are not included."
+          },
+          "redirectURL": "/login",
+          "headersSize": 309,
+          "bodySize": 2289
+        },
+        "cache": {},
+        "timings": {
+          "blocked": 0,
+          "dns": 0,
+          "connect": 0,
+          "ssl": 0,
+          "send": 0,
+          "wait": 116,
+          "receive": 0
+        },
+        "time": 116,
+        "_securityState": "secure",
+        "serverIPAddress": "216.198.79.131",
+        "connection": "443",
+        "pageref": "page_1"
+      },
+      {
+        "startedDateTime": "2026-03-02T22:17:13.411-05:00",
+        "request": {
+          "bodySize": 0,
+          "method": "GET",
+          "url": "https://fullstack-challenge-tawny.vercel.app/login",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "Host",
+              "value": "fullstack-challenge-tawny.vercel.app"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0"
+            },
+            {
+              "name": "Accept",
+              "value": "*/*"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "en-US,en;q=0.9"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate, br, zstd"
+            },
+            {
+              "name": "rsc",
+              "value": "1"
+            },
+            {
+              "name": "next-router-state-tree",
+              "value": "%5B%22%22%2C%7B%22children%22%3A%5B%22(auth)%22%2C%7B%22children%22%3A%5B%22login%22%2C%7B%22children%22%3A%5B%22__PAGE__%22%2C%7B%7D%2Cnull%2Cnull%5D%7D%2Cnull%2Cnull%5D%7D%2Cnull%2Cnull%5D%7D%2Cnull%2Cnull%2Ctrue%5D"
+            },
+            {
+              "name": "next-url",
+              "value": "/login"
+            },
+            {
+              "name": "Referer",
+              "value": "https://fullstack-challenge-tawny.vercel.app/login"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "Sec-Fetch-Dest",
+              "value": "empty"
+            },
+            {
+              "name": "Sec-Fetch-Mode",
+              "value": "cors"
+            },
+            {
+              "name": "Sec-Fetch-Site",
+              "value": "same-origin"
+            },
+            {
+              "name": "If-None-Match",
+              "value": "W/\"fbe18e8550394b706952d77a908eb792\""
+            },
+            {
+              "name": "Priority",
+              "value": "u=4"
+            },
+            {
+              "name": "TE",
+              "value": "trailers"
+            }
+          ],
+          "cookies": [],
+          "queryString": [],
+          "headersSize": 745
+        },
+        "response": {
+          "status": 200,
+          "statusText": "",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "access-control-allow-origin",
+              "value": "*"
+            },
+            {
+              "name": "age",
+              "value": "353"
+            },
+            {
+              "name": "cache-control",
+              "value": "public, max-age=0, must-revalidate"
+            },
+            {
+              "name": "content-disposition",
+              "value": "inline"
+            },
+            {
+              "name": "content-encoding",
+              "value": "br"
+            },
+            {
+              "name": "content-type",
+              "value": "text/x-component"
+            },
+            {
+              "name": "date",
+              "value": "Tue, 03 Mar 2026 03:17:13 GMT"
+            },
+            {
+              "name": "etag",
+              "value": "W/\"9f6e13273f0504565d24b3fb3213fef0\""
+            },
+            {
+              "name": "server",
+              "value": "Vercel"
+            },
+            {
+              "name": "strict-transport-security",
+              "value": "max-age=63072000; includeSubDomains; preload"
+            },
+            {
+              "name": "vary",
+              "value": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch"
+            },
+            {
+              "name": "x-matched-path",
+              "value": "/login.rsc"
+            },
+            {
+              "name": "x-nextjs-prerender",
+              "value": "1"
+            },
+            {
+              "name": "x-nextjs-stale-time",
+              "value": "300"
+            },
+            {
+              "name": "x-vercel-cache",
+              "value": "HIT"
+            },
+            {
+              "name": "x-vercel-id",
+              "value": "iad1::xq786-1772507833957-f35d4daa0cd7"
+            },
+            {
+              "name": "X-Firefox-Spdy",
+              "value": "h2"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "mimeType": "text/x-component",
+            "size": 7311,
+            "text": "1:\"$Sreact.fragment\"\n2:I[45328,[\"/_next/static/chunks/12fc9f564cca4640.js\",\"/_next/static/chunks/b51fc3f35a19904c.js\"],\"Providers\"]\n3:I[69517,[\"/_next/static/chunks/68c37efa95b0ba20.js\",\"/_next/static/chunks/e6c689350d1303d4.js\"],\"default\"]\n4:I[70121,[\"/_next/static/chunks/68c37efa95b0ba20.js\",\"/_next/static/chunks/e6c689350d1303d4.js\"],\"default\"]\n5:I[8182,[\"/_next/static/chunks/12fc9f564cca4640.js\",\"/_next/static/chunks/b51fc3f35a19904c.js\"],\"Toaster\"]\n6:I[76541,[\"/_next/static/chunks/68c37efa95b0ba20.js\",\"/_next/static/chunks/e6c689350d1303d4.js\"],\"ClientPageRoot\"]\n7:I[84147,[\"/_next/static/chunks/12fc9f564cca4640.js\",\"/_next/static/chunks/b51fc3f35a19904c.js\",\"/_next/static/chunks/244c66ae12521132.js\",\"/_next/static/chunks/ca1c5ea5a727a58a.js\",\"/_next/static/chunks/96d7893648191f6b.js\",\"/_next/static/chunks/463849fdbee36be3.js\"],\"default\"]\na:I[59090,[\"/_next/static/chunks/68c37efa95b0ba20.js\",\"/_next/static/chunks/e6c689350d1303d4.js\"],\"OutletBoundary\"]\nb:\"$Sreact.suspense\"\nd:I[59090,[\"/_next/static/chunks/68c37efa95b0ba20.js\",\"/_next/static/chunks/e6c689350d1303d4.js\"],\"ViewportBoundary\"]\nf:I[59090,[\"/_next/static/chunks/68c37efa95b0ba20.js\",\"/_next/static/chunks/e6c689350d1303d4.js\"],\"MetadataBoundary\"]\n11:I[98928,[],\"default\"]\n:HL[\"/_next/static/chunks/e730570abdbfd731.css\",\"style\"]\n:HL[\"/_next/static/media/797e433ab948586e-s.p.dbea232f.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/media/caa3a2e1cccd8315-s.p.853070df.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n0:{\"P\":null,\"b\":\"qeZln05cJZhBjlG7bPXVf\",\"c\":[\"\",\"login\"],\"q\":\"\",\"i\":false,\"f\":[[[\"\",{\"children\":[\"(auth)\",{\"children\":[\"login\",{\"children\":[\"__PAGE__\",{}]}]}]},\"$undefined\",\"$undefined\",true],[[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/chunks/e730570abdbfd731.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}],[\"$\",\"script\",\"script-0\",{\"src\":\"/_next/static/chunks/12fc9f564cca4640.js\",\"async\":true,\"nonce\":\"$undefined\"}],[\"$\",\"script\",\"script-1\",{\"src\":\"/_next/static/chunks/b51fc3f35a19904c.js\",\"async\":true,\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"children\":[\"$\",\"body\",null,{\"className\":\"geist_a71539c9-module__T19VSG__variable geist_mono_8d43a2aa-module__8Li5zG__variable antialiased\",\"children\":[\"$\",\"$L2\",null,{\"children\":[[\"$\",\"$L3\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L4\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}],[\"$\",\"$L5\",null,{\"richColors\":true,\"position\":\"top-right\"}]]}]}]}]]}],{\"children\":[[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L3\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L4\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":\"$0:f:0:1:0:props:children:1:props:children:props:children:props:children:0:props:notFound:0:1:props:style\",\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":\"$0:f:0:1:0:props:children:1:props:children:props:children:props:children:0:props:notFound:0:1:props:children:props:children:1:props:style\",\"children\":404}],[\"$\",\"div\",null,{\"style\":\"$0:f:0:1:0:props:children:1:props:children:props:children:props:children:0:props:notFound:0:1:props:children:props:children:2:props:style\",\"children\":[\"$\",\"h2\",null,{\"style\":\"$0:f:0:1:0:props:children:1:props:children:props:children:props:children:0:props:notFound:0:1:props:children:props:children:2:props:children:props:style\",\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L3\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L4\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"$\",\"$1\",\"c\",{\"children\":[[\"$\",\"$L6\",null,{\"Component\":\"$7\",\"serverProvidedParams\":{\"searchParams\":{},\"params\":{},\"promises\":[\"$@8\",\"$@9\"]}}],[[\"$\",\"script\",\"script-0\",{\"src\":\"/_next/static/chunks/244c66ae12521132.js\",\"async\":true,\"nonce\":\"$undefined\"}],[\"$\",\"script\",\"script-1\",{\"src\":\"/_next/static/chunks/ca1c5ea5a727a58a.js\",\"async\":true,\"nonce\":\"$undefined\"}],[\"$\",\"script\",\"script-2\",{\"src\":\"/_next/static/chunks/96d7893648191f6b.js\",\"async\":true,\"nonce\":\"$undefined\"}],[\"$\",\"script\",\"script-3\",{\"src\":\"/_next/static/chunks/463849fdbee36be3.js\",\"async\":true,\"nonce\":\"$undefined\"}]],[\"$\",\"$La\",null,{\"children\":[\"$\",\"$b\",null,{\"name\":\"Next.MetadataOutlet\",\"children\":\"$@c\"}]}]]}],{},null,false,false]},null,false,false]},null,false,false]},null,false,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$Ld\",null,{\"children\":\"$Le\"}],[\"$\",\"div\",null,{\"hidden\":true,\"children\":[\"$\",\"$Lf\",null,{\"children\":[\"$\",\"$b\",null,{\"name\":\"Next.Metadata\",\"children\":\"$L10\"}]}]}],[\"$\",\"meta\",null,{\"name\":\"next-size-adjust\",\"content\":\"\"}]]}],false]],\"m\":\"$undefined\",\"G\":[\"$11\",[]],\"S\":true}\n8:{}\n9:\"$0:f:0:1:1:children:1:children:1:children:0:props:children:0:props:serverProvidedParams:params\"\ne:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\n12:I[39844,[\"/_next/static/chunks/68c37efa95b0ba20.js\",\"/_next/static/chunks/e6c689350d1303d4.js\"],\"IconMark\"]\nc:null\n10:[[\"$\",\"title\",\"0\",{\"children\":\"Fullstack Challenge\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"User and Posts Management Portal.\"}],[\"$\",\"link\",\"2\",{\"rel\":\"icon\",\"href\":\"/favicon.ico?favicon.0b3bf435.ico\",\"sizes\":\"256x256\",\"type\":\"image/x-icon\"}],[\"$\",\"$L12\",\"3\",{}]]\n"
+          },
+          "redirectURL": "",
+          "headersSize": 619,
+          "bodySize": 2599
+        },
+        "cache": {},
+        "timings": {
+          "blocked": 1,
+          "dns": 0,
+          "connect": 0,
+          "ssl": 0,
+          "send": 0,
+          "wait": 122,
+          "receive": 0
+        },
+        "time": 123,
+        "_securityState": "secure",
+        "serverIPAddress": "216.198.79.131",
+        "connection": "443",
+        "pageref": "page_1"
+      }
+    ]
+  }
+}

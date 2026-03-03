@@ -31,16 +31,29 @@ async function apiFetch<T>(path: string, init: RequestInit = {}): Promise<T> {
 }
 
 export async function login(email: string, password: string) {
-  return apiFetch<{ data: { message: string; role: string } }>("/auth/login", {
+  const data = await apiFetch<{ data: { message: string; role: string } }>(
+    "/auth/login",
+    {
+      method: "POST",
+      body: JSON.stringify({ email, password }),
+    },
+  );
+
+  // Mirror session onto the Vercel domain so middleware can read it.
+  await fetch("/api/auth/session", {
     method: "POST",
-    body: JSON.stringify({ email, password }),
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ role: data.data.role }),
   });
+  return data;
 }
 
 export async function logout() {
-  return apiFetch<{ data: { message: string } }>("/auth/logout", {
+  await apiFetch<{ data: { message: string } }>("/auth/logout", {
     method: "POST",
   });
+  await fetch("/api/auth/session", { method: "DELETE" });
+  return { data: { message: "Logged out." } };
 }
 
 export async function getReqResUsers(page = 1): Promise<ReqResUsersResponse> {
