@@ -14,7 +14,7 @@ provider:
 
 functions:
   api:
-    handler: dist/src/lambda.handler
+    handler: dist/lambda.handler
     timeout: 29
     events:
       - httpApi:
@@ -33,6 +33,7 @@ package:
     - '!**/*.spec.ts'
     - '!**/*.spec.js'
     - '!README.md'
+    - '!node_modules/**'
 
 plugins:
   - serverless-offline
