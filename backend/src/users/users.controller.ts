@@ -16,6 +16,8 @@ import { Role } from '@prisma/client';
 import {
   ApiCookieAuth,
   ApiOperation,
+  ApiParam,
+  ApiQuery,
   ApiResponse,
   ApiTags,
 } from '@nestjs/swagger';
@@ -66,14 +68,30 @@ export class UsersController {
   }
 
   @Public()
+  @ApiOperation({ summary: 'List users from ReqRes API (public proxy) ' })
+  @ApiQuery({
+    name: 'page',
+    required: false,
+    schema: { default: 1, type: 'number' },
+    description: 'Page number (1 or 2)',
+  })
+  @ApiResponse({ status: 200, description: 'Paginated ReqRes user list.' })
   @Get('regres')
   getReqResUsers(@Query('page') page = '1') {
     return this.usersService.getReqResUsers(Number(page));
   }
 
   @Public()
+  @ApiOperation({ summary: 'List users from ReqRes API (public proxy)' })
+  @ApiParam({
+    name: 'id',
+    schema: { type: 'number' },
+    description: 'ReqRes user ID (1-12)',
+  })
+  @ApiResponse({ status: 200, description: 'ReqRes user object.' })
+  @ApiResponse({ status: 404, description: 'User not found on ReqRes.' })
   @Get('regres/:id')
   getReqResUser(@Param('id') id: string) {
-    return this.usersService.getReqResUsers(Number(id));
+    return this.usersService.getReqResUser(Number(id));
   }
 }

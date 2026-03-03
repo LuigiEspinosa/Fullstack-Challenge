@@ -33,6 +33,14 @@ async function bootstrap() {
     'api/docs',
     app,
     SwaggerModule.createDocument(app, swaggerConfig),
+    {
+      customJs: [
+        'https://cdn.jsdelivr.net/npm/swagger-ui-dist@5/swagger-ui-bundle.js',
+        'https://cdn.jsdelivr.net/npm/swagger-ui-dist@5/swagger-ui-standalone-preset.js',
+      ],
+      customCssUrl:
+        'https://cdn.jsdelivr.net/npm/swagger-ui-dist@5/swagger-ui.css',
+    },
   );
 
   await app.listen(process.env.PORT ?? 3001);
