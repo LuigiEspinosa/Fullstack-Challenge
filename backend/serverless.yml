@@ -11,10 +11,11 @@ provider:
     NODE_ENV: production
     DATABASE_URL: ${env:DATABASE_URL, 'postgresql://challenge:challenge@localhost:5432/challenge'}
     FRONTEND_URL: ${env:FRONTEND_URL, 'http://localhost:3000'}
+    REQRES_API_KEY: ${env:REQRES_API_KEY, ''}
 
 functions:
   api:
-    handler: dist/src/lambda.handler
+    handler: dist/lambda.handler
     timeout: 29
     events:
       - httpApi:
@@ -33,6 +34,7 @@ package:
     - '!**/*.spec.ts'
     - '!**/*.spec.js'
     - '!README.md'
+    - '!node_modules/**'
 
 plugins:
   - serverless-offline

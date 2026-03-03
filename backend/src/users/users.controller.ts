@@ -6,6 +6,7 @@ import {
   Param,
   ParseIntPipe,
   Post,
+  Query,
   UseGuards,
 } from '@nestjs/common';
 import { UsersService } from './users.service';
@@ -18,6 +19,7 @@ import {
   ApiResponse,
   ApiTags,
 } from '@nestjs/swagger';
+import { Public } from '../common/decorators/public.decorator';
 
 @ApiTags('users')
 @ApiCookieAuth('session')
@@ -61,5 +63,17 @@ export class UsersController {
   async deleteSaved(@Param('id', ParseIntPipe) id: number) {
     const user = await this.usersService.deleteSaved(id);
     return { data: user };
+  }
+
+  @Public()
+  @Get('regres')
+  getReqResUsers(@Query('page') page = '1') {
+    return this.usersService.getReqResUsers(Number(page));
+  }
+
+  @Public()
+  @Get('regres/:id')
+  getReqResUser(@Param('id') id: string) {
+    return this.usersService.getReqResUsers(Number(id));
   }
 }
