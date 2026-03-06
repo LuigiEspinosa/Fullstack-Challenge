@@ -3,7 +3,8 @@
 ## Live URLs
 
 - Frontend: <https://fullstack-challenge-tawny.vercel.app>
-- Backend: <https://aaw7q5dw4f.execute-api.us-east-2.amazonaws.com/api/docs>
+- Backend: <https://aaw7q5dw4f.execute-api.us-east-2.amazonaws.com/api/docs> 
+  - Backend service is unavailable due to the expiration of my AWS credits.
 
 ## Architecture
 
